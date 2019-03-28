@@ -5,6 +5,7 @@ public class MementoTestDrive {
     public static void main(String[] args) {
         CareTaker careTaker = new CareTaker();
         Originator originator = new Originator(5, 10, careTaker);
+        
         System.out.println("Default State: " + originator);
         originator.setX(originator.getY() * 51);
         System.out.println("State: " + originator);

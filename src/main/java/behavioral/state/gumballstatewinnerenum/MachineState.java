@@ -4,7 +4,7 @@ import java.util.Random;
 
 public enum MachineState implements State {
 
-    NO_QUARTER {
+    NO_QUARTER("quater message") {
         @Override
         public void insertQuarter(GumballMachine machine) {
             System.out.println("You inserted a quarter");
@@ -26,7 +26,7 @@ public enum MachineState implements State {
             System.out.println("You need to pay first");
         }
     },
-    HAS_QUARTER {
+    HAS_QUARTER("has quarter message") {
         Random randomWinner = new Random(System.currentTimeMillis());
 
         @Override
@@ -56,7 +56,7 @@ public enum MachineState implements State {
             System.out.println("No gumball dispensed");
         }
     },
-    SOLD_OUT {
+    SOLD_OUT("sold out message") {
         @Override
         public void insertQuarter(GumballMachine machine) {
             System.out.println("You can't insert a quarter, the machine is sold out");
@@ -77,7 +77,7 @@ public enum MachineState implements State {
             System.out.println("No gumball dispensed");
         }
     },
-    SOLD {
+    SOLD("sold message") {
         @Override
         public void insertQuarter(GumballMachine machine) {
             System.out.println("Please wait, we're already giving you a gumball");
@@ -104,7 +104,7 @@ public enum MachineState implements State {
             }
         }
     },
-    WINNER {
+    WINNER("winner message") {
         @Override
         public void insertQuarter(GumballMachine machine) {
             System.out.println("Please wait, we're already giving you a Gumball");
@@ -137,4 +137,15 @@ public enum MachineState implements State {
             }
         }
     };
+
+    private String message;
+
+    private MachineState(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return message;
+    }
 }

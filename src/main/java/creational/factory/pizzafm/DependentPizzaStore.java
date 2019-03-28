@@ -1,45 +1,18 @@
 package creational.factory.pizzafm;
 
 public class DependentPizzaStore {
+    
+    NYPizzaStore ny = new NYPizzaStore();
+    ChicagoPizzaStore ch = new ChicagoPizzaStore();
 
     public Pizza createPizza(String style, String type) {
         Pizza pizza = null;
         switch (style) {
             case "NY":
-                switch (type) {
-                    case "cheese":
-                        pizza = new NYStyleCheesePizza();
-                        break;
-                    case "veggie":
-                        pizza = new NYStyleVeggiePizza();
-                        break;
-                    case "clam":
-                        pizza = new NYStyleClamPizza();
-                        break;
-                    case "pepperoni":
-                        pizza = new NYStylePepperoniPizza();
-                        break;
-                    default:
-                        break;
-                }
+               pizza = ny.createPizza(type);
                 break;
             case "Chicago":
-                switch (type) {
-                    case "cheese":
-                        pizza = new ChicagoStyleCheesePizza();
-                        break;
-                    case "veggie":
-                        pizza = new ChicagoStyleVeggiePizza();
-                        break;
-                    case "clam":
-                        pizza = new ChicagoStyleClamPizza();
-                        break;
-                    case "pepperoni":
-                        pizza = new ChicagoStylePepperoniPizza();
-                        break;
-                    default:
-                        break;
-                }
+                pizza = ch.createPizza(type); 
                 break;
             default:
                 System.out.println("Error: invalid type of pizza");

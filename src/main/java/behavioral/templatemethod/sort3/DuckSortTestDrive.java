@@ -1,4 +1,4 @@
-package behavioral.templatemethod.sort2;
+package behavioral.templatemethod.sort3;
 
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ public class DuckSortTestDrive {
         System.out.println("Before sorting:");
         display(ducks);
 
-        Arrays.sort(ducks, new DuckWeightComparator().reversed());
+        Arrays.sort(ducks, (x,y)-> x.name.compareTo(y.name));
 
         System.out.println("\nAfter sorting:");
         display(ducks);

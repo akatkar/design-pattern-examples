@@ -1,4 +1,4 @@
-package behavioral.templatemethod.sort2;
+package behavioral.templatemethod.sort3;
 
 public class Duck implements Comparable<Duck> {
 

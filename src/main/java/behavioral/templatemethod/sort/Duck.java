@@ -1,6 +1,6 @@
 package behavioral.templatemethod.sort;
 
-public class Duck implements Comparable {
+public class Duck implements Comparable<Duck> {
 
     String name;
     int weight;
@@ -16,16 +16,7 @@ public class Duck implements Comparable {
     }
 
     @Override
-    public int compareTo(Object object) {
-
-        Duck otherDuck = (Duck) object;
-
-        if (this.weight < otherDuck.weight) {
-            return -1;
-        } else if (this.weight == otherDuck.weight) {
-            return 0;
-        } else { // this.weight > otherDuck.weight
-            return 1;
-        }
+    public int compareTo(Duck other) {
+        return this.weight - other.weight;
     }
 }

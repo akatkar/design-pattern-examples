@@ -21,6 +21,6 @@ public class InterpreterTestDrive {
                 stack.push(i);
             }
         }
-        System.out.println("( " + tokenString + " ): " + stack.pop().interpret());
+        System.out.println("( " + tokenString + " ) = " + stack.pop().interpret());
     }
 }

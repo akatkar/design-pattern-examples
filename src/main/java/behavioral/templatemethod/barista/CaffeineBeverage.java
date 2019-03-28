@@ -9,8 +9,10 @@ public abstract class CaffeineBeverage {
         addCondiments();
     }
 
+    // demlemek
     abstract void brew();
 
+    // tarçın, şeker, süt vs ekle
     abstract void addCondiments();
 
     void boilWater() {
